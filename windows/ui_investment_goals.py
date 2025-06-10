@@ -1,0 +1,73 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_InvestmentGoals(object):
+    def setupUi(self, Form):
+        Form.setObjectName("Form")
+        Form.resize(344, 280)
+        self.horizonLineEdit = QtWidgets.QLineEdit(Form)
+        self.horizonLineEdit.setGeometry(QtCore.QRect(90, 70, 161, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.horizonLineEdit.setFont(font)
+        self.horizonLineEdit.setObjectName("horizonLineEdit")
+        self.label = QtWidgets.QLabel(Form)
+        self.label.setGeometry(QtCore.QRect(20, 0, 321, 31))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Black")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(Form)
+        self.label_2.setGeometry(QtCore.QRect(60, 40, 251, 21))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.goalComboBox = QtWidgets.QComboBox(Form)
+        self.goalComboBox.setGeometry(QtCore.QRect(60, 140, 231, 31))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.goalComboBox.setFont(font)
+        self.goalComboBox.setObjectName("goalComboBox")
+        self.goalComboBox.addItem("")
+        self.goalComboBox.addItem("")
+        self.goalComboBox.addItem("")
+        self.label_3 = QtWidgets.QLabel(Form)
+        self.label_3.setGeometry(QtCore.QRect(80, 110, 211, 21))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_3.setFont(font)
+        self.label_3.setObjectName("label_3")
+        self.saveButton = QtWidgets.QPushButton(Form)
+        self.saveButton.setGeometry(QtCore.QRect(100, 190, 131, 41))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.saveButton.setFont(font)
+        self.saveButton.setObjectName("saveButton")
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "Form"))
+        self.label.setText(_translate("Form", "Дополнительные данные"))
+        self.label_2.setText(_translate("Form", "Инвестиционный горизонт (лет):"))
+        self.goalComboBox.setItemText(0, _translate("Form", "Сохранение капитала"))
+        self.goalComboBox.setItemText(1, _translate("Form", "Сбалансированный"))
+        self.goalComboBox.setItemText(2, _translate("Form", "Рост капитала"))
+        self.label_3.setText(_translate("Form", "Ваша инвестиционная цель:"))
+        self.saveButton.setText(_translate("Form", "Сохранить"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form = QtWidgets.QWidget()
+    ui = Ui_Form()
+    ui.setupUi(Form)
+    Form.show()
+    sys.exit(app.exec_())
